@@ -1,0 +1,933 @@
+EESchema Schematic File Version 4
+LIBS:RPiCluster2-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Q_PMOS_GSD Q?
+U 1 1 5BD3298F
+P 3000 2200
+AR Path="/5BD3298F" Ref="Q?"  Part="1" 
+AR Path="/5B9FF7BF/5BD3298F" Ref="Q?"  Part="1" 
+AR Path="/5BD1B5C7/5BD3298F" Ref="Q4"  Part="1" 
+F 0 "Q4" H 2950 2050 50  0000 L CNN
+F 1 "IRLML6402" V 3000 2350 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 3200 2300 50  0001 C CNN
+F 3 "~" H 3000 2200 50  0001 C CNN
+	1    3000 2200
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5BD32996
+P 3100 1300
+AR Path="/5BD32996" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5BD32996" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5BD32996" Ref="#PWR036"  Part="1" 
+F 0 "#PWR036" H 3100 1150 50  0001 C CNN
+F 1 "+5V" H 3115 1473 50  0000 C CNN
+F 2 "" H 3100 1300 50  0001 C CNN
+F 3 "" H 3100 1300 50  0001 C CNN
+	1    3100 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5BD3299C
+P 2700 1850
+AR Path="/5BD3299C" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5BD3299C" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5BD3299C" Ref="R27"  Part="1" 
+F 0 "R27" H 2770 1896 50  0000 L CNN
+F 1 "10k" H 2770 1805 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2630 1850 50  0001 C CNN
+F 3 "~" H 2700 1850 50  0001 C CNN
+	1    2700 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_2Pole TP?
+U 1 1 5BD329A4
+P 3300 2200
+AR Path="/5BD329A4" Ref="TP?"  Part="1" 
+AR Path="/5B9FF7BF/5BD329A4" Ref="TP?"  Part="1" 
+AR Path="/5BD1B5C7/5BD329A4" Ref="TP2"  Part="1" 
+F 0 "TP2" V 3254 2258 50  0000 L CNN
+F 1 "Test_Vds_1" V 3345 2258 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3300 2200 50  0001 C CNN
+F 3 "~" H 3300 2200 50  0001 C CNN
+	1    3300 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3300 2400 3300 2500
+Wire Wire Line
+	3300 2000 3300 1900
+$Comp
+L power:VEE #PWR?
+U 1 1 5BD329AE
+P 2700 2600
+AR Path="/5BD329AE" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5BD329AE" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5BD329AE" Ref="#PWR038"  Part="1" 
+F 0 "#PWR038" H 2700 2450 50  0001 C CNN
+F 1 "VEE" H 2718 2773 50  0000 C CNN
+F 2 "" H 2700 2600 50  0001 C CNN
+F 3 "" H 2700 2600 50  0001 C CNN
+	1    2700 2600
+	-1   0    0    1   
+$EndComp
+Text Notes 600  900  0    50   ~ 0
+Vf of TLP627 is 1V to 1.3V.  IOHmax of MCP230xx is 25mA.\nVOH of MCP230xx is VDD-0.7V to VDD.  And VDD=3.3V here.\nWith R=1k, If=2mA to 2.3mA < IOH and thus IC>>0.1mA.\nHere the total Ifmax=2.3*4=9.2mA.
+$Comp
+L Device:R R?
+U 1 1 5BD329BC
+P 1150 2200
+AR Path="/5BD329BC" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5BD329BC" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5BD329BC" Ref="R29"  Part="1" 
+F 0 "R29" H 1220 2246 50  0000 L CNN
+F 1 "1k" H 1220 2155 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 1080 2200 50  0001 C CNN
+F 3 "~" H 1150 2200 50  0001 C CNN
+	1    1150 2200
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	2700 2400 2700 2600
+Wire Wire Line
+	3100 2400 3100 2500
+Wire Wire Line
+	3300 1900 3100 1900
+Connection ~ 3100 1900
+Wire Wire Line
+	3100 1900 3100 2000
+Wire Wire Line
+	3300 2500 3100 2500
+Wire Wire Line
+	1500 2400 1700 2400
+Wire Wire Line
+	2700 1700 2700 1500
+Wire Wire Line
+	2700 1500 3100 1500
+Wire Wire Line
+	3100 1500 3100 1300
+Wire Wire Line
+	3100 1500 3100 1900
+Wire Wire Line
+	2500 2400 2700 2400
+Wire Wire Line
+	2500 2200 2700 2200
+Connection ~ 3100 1500
+Wire Wire Line
+	2700 2000 2700 2200
+Connection ~ 2700 2200
+Wire Wire Line
+	2700 2200 2800 2200
+Text GLabel 800  2200 0    50   Input ~ 0
+SLV1
+Text GLabel 3300 2700 2    50   Output ~ 0
+5V_SLV1
+Text Notes 3500 950  0    50   ~ 0
+Suppose that RPi runs at 5V 1A, and VGS=-4.5V,\nRDS(on)=0.05Ω at most. Thus VDS=0.05*-1=0.05V.\nSo we use the FET at VDS=5V, ID=0A and VDS=0.05V, ID=1A.
+$Comp
+L Device:C_Small C10
+U 1 1 5BD348E6
+P 2100 1300
+F 0 "C10" V 1871 1300 50  0000 C CNN
+F 1 "10u" V 1962 1300 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 1300 50  0001 C CNN
+F 3 "~" H 2100 1300 50  0001 C CNN
+	1    2100 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C12
+U 1 1 5BD34986
+P 2100 1700
+F 0 "C12" V 1871 1700 50  0000 C CNN
+F 1 "10u" V 1962 1700 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 1700 50  0001 C CNN
+F 3 "~" H 2100 1700 50  0001 C CNN
+	1    2100 1700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 1300 2300 1300
+Wire Wire Line
+	2300 1300 2300 1500
+Wire Wire Line
+	2300 1700 2200 1700
+Wire Wire Line
+	2700 1500 2300 1500
+Connection ~ 2700 1500
+Connection ~ 2300 1500
+Wire Wire Line
+	2300 1500 2300 1700
+Wire Wire Line
+	2000 1300 1900 1300
+Wire Wire Line
+	1900 1300 1900 1500
+Wire Wire Line
+	1900 1700 2000 1700
+Wire Wire Line
+	1300 2200 1700 2200
+Wire Wire Line
+	1900 1500 1500 1500
+Wire Wire Line
+	1500 1500 1500 2400
+Connection ~ 1900 1500
+Wire Wire Line
+	1900 1500 1900 1700
+Connection ~ 1500 2400
+$Comp
+L power:GND #PWR?
+U 1 1 5BD37B91
+P 3100 3500
+AR Path="/5BD37B91" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5BD37B91" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5BD37B91" Ref="#PWR040"  Part="1" 
+F 0 "#PWR040" H 3100 3250 50  0001 C CNN
+F 1 "GND" H 3105 3327 50  0000 C CNN
+F 2 "" H 3100 3500 50  0001 C CNN
+F 3 "" H 3100 3500 50  0001 C CNN
+	1    3100 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Small D9
+U 1 1 5C16FD2F
+P 3100 3000
+F 0 "D9" V 3054 3068 50  0000 L CNN
+F 1 "1V0" V 3145 3068 50  0000 L CNN
+F 2 "Diode_THT:D_T-1_P5.08mm_Horizontal" V 3100 3000 50  0001 C CNN
+F 3 "~" V 3100 3000 50  0001 C CNN
+	1    3100 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	800  2200 1000 2200
+$Comp
+L Device:Q_PMOS_GSD Q?
+U 1 1 5C173A6C
+P 6400 2200
+AR Path="/5C173A6C" Ref="Q?"  Part="1" 
+AR Path="/5B9FF7BF/5C173A6C" Ref="Q?"  Part="1" 
+AR Path="/5BD1B5C7/5C173A6C" Ref="Q5"  Part="1" 
+F 0 "Q5" H 6350 2050 50  0000 L CNN
+F 1 "IRLML6402" V 6400 2350 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 6600 2300 50  0001 C CNN
+F 3 "~" H 6400 2200 50  0001 C CNN
+	1    6400 2200
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C173A72
+P 6500 1300
+AR Path="/5C173A72" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C173A72" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C173A72" Ref="#PWR037"  Part="1" 
+F 0 "#PWR037" H 6500 1150 50  0001 C CNN
+F 1 "+5V" H 6515 1473 50  0000 C CNN
+F 2 "" H 6500 1300 50  0001 C CNN
+F 3 "" H 6500 1300 50  0001 C CNN
+	1    6500 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C173A78
+P 6100 1850
+AR Path="/5C173A78" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5C173A78" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5C173A78" Ref="R28"  Part="1" 
+F 0 "R28" H 6170 1896 50  0000 L CNN
+F 1 "10k" H 6170 1805 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 6030 1850 50  0001 C CNN
+F 3 "~" H 6100 1850 50  0001 C CNN
+	1    6100 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_2Pole TP?
+U 1 1 5C173A7E
+P 6700 2200
+AR Path="/5C173A7E" Ref="TP?"  Part="1" 
+AR Path="/5B9FF7BF/5C173A7E" Ref="TP?"  Part="1" 
+AR Path="/5BD1B5C7/5C173A7E" Ref="TP3"  Part="1" 
+F 0 "TP3" V 6654 2258 50  0000 L CNN
+F 1 "Test_Vds_2" V 6745 2258 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6700 2200 50  0001 C CNN
+F 3 "~" H 6700 2200 50  0001 C CNN
+	1    6700 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 2700 6700 2700
+Wire Wire Line
+	6700 2400 6700 2500
+Wire Wire Line
+	6700 2000 6700 1900
+$Comp
+L power:VEE #PWR?
+U 1 1 5C173A87
+P 6100 2600
+AR Path="/5C173A87" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C173A87" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C173A87" Ref="#PWR039"  Part="1" 
+F 0 "#PWR039" H 6100 2450 50  0001 C CNN
+F 1 "VEE" H 6118 2773 50  0000 C CNN
+F 2 "" H 6100 2600 50  0001 C CNN
+F 3 "" H 6100 2600 50  0001 C CNN
+	1    6100 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C173A93
+P 4550 2200
+AR Path="/5C173A93" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5C173A93" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5C173A93" Ref="R30"  Part="1" 
+F 0 "R30" H 4620 2246 50  0000 L CNN
+F 1 "1k" H 4620 2155 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4480 2200 50  0001 C CNN
+F 3 "~" H 4550 2200 50  0001 C CNN
+	1    4550 2200
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6100 2400 6100 2600
+Wire Wire Line
+	6500 2400 6500 2500
+Wire Wire Line
+	6700 1900 6500 1900
+Connection ~ 6500 1900
+Wire Wire Line
+	6500 1900 6500 2000
+Wire Wire Line
+	6700 2500 6500 2500
+Connection ~ 6500 2500
+Wire Wire Line
+	6500 2500 6500 2700
+Wire Wire Line
+	4900 2400 5100 2400
+Wire Wire Line
+	6100 1700 6100 1500
+Wire Wire Line
+	6100 1500 6500 1500
+Wire Wire Line
+	6500 1500 6500 1300
+Wire Wire Line
+	6500 1500 6500 1900
+Wire Wire Line
+	5900 2400 6100 2400
+Wire Wire Line
+	5900 2200 6100 2200
+Connection ~ 6500 1500
+Wire Wire Line
+	6100 2000 6100 2200
+Connection ~ 6100 2200
+Wire Wire Line
+	6100 2200 6200 2200
+Text GLabel 4200 2200 0    50   Input ~ 0
+SLV2
+Text GLabel 6700 2700 2    50   Output ~ 0
+5V_SLV2
+$Comp
+L Device:C_Small C11
+U 1 1 5C173AB5
+P 5500 1300
+F 0 "C11" V 5271 1300 50  0000 C CNN
+F 1 "10u" V 5362 1300 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 1300 50  0001 C CNN
+F 3 "~" H 5500 1300 50  0001 C CNN
+	1    5500 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C13
+U 1 1 5C173ABB
+P 5500 1700
+F 0 "C13" V 5271 1700 50  0000 C CNN
+F 1 "10u" V 5362 1700 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 1700 50  0001 C CNN
+F 3 "~" H 5500 1700 50  0001 C CNN
+	1    5500 1700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5600 1300 5700 1300
+Wire Wire Line
+	5700 1300 5700 1500
+Wire Wire Line
+	5700 1700 5600 1700
+Wire Wire Line
+	6100 1500 5700 1500
+Connection ~ 6100 1500
+Connection ~ 5700 1500
+Wire Wire Line
+	5700 1500 5700 1700
+Wire Wire Line
+	5400 1300 5300 1300
+Wire Wire Line
+	5300 1300 5300 1500
+Wire Wire Line
+	5300 1700 5400 1700
+Wire Wire Line
+	4700 2200 5100 2200
+Wire Wire Line
+	5300 1500 4900 1500
+Wire Wire Line
+	4900 1500 4900 2400
+Connection ~ 5300 1500
+Wire Wire Line
+	5300 1500 5300 1700
+Connection ~ 4900 2400
+$Comp
+L power:GND #PWR?
+U 1 1 5C173AD1
+P 6500 3500
+AR Path="/5C173AD1" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C173AD1" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C173AD1" Ref="#PWR041"  Part="1" 
+F 0 "#PWR041" H 6500 3250 50  0001 C CNN
+F 1 "GND" H 6505 3327 50  0000 C CNN
+F 2 "" H 6500 3500 50  0001 C CNN
+F 3 "" H 6500 3500 50  0001 C CNN
+	1    6500 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 2900 6500 2700
+Connection ~ 6500 2700
+$Comp
+L Device:D_Small D10
+U 1 1 5C173ADA
+P 6500 3000
+F 0 "D10" V 6454 3068 50  0000 L CNN
+F 1 "1V0" V 6545 3068 50  0000 L CNN
+F 2 "Diode_THT:D_T-1_P5.08mm_Horizontal" V 6500 3000 50  0001 C CNN
+F 3 "~" V 6500 3000 50  0001 C CNN
+	1    6500 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4200 2200 4400 2200
+Connection ~ 3100 2500
+Wire Wire Line
+	3100 2900 3100 2700
+Wire Wire Line
+	3100 2500 3100 2700
+Connection ~ 3100 2700
+Wire Wire Line
+	3100 2700 3300 2700
+Wire Wire Line
+	3100 3100 3100 3300
+Wire Wire Line
+	3100 3300 1500 3300
+Wire Wire Line
+	1500 2400 1500 3300
+Connection ~ 3100 3300
+Wire Wire Line
+	3100 3300 3100 3500
+Wire Wire Line
+	6500 3100 6500 3300
+Wire Wire Line
+	4900 3300 6500 3300
+Wire Wire Line
+	4900 2400 4900 3300
+Connection ~ 6500 3300
+Wire Wire Line
+	6500 3300 6500 3500
+$Comp
+L Device:Q_PMOS_GSD Q?
+U 1 1 5C2E422E
+P 3000 4900
+AR Path="/5C2E422E" Ref="Q?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E422E" Ref="Q?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E422E" Ref="Q6"  Part="1" 
+F 0 "Q6" H 2950 4750 50  0000 L CNN
+F 1 "IRLML6402" V 3000 5050 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 3200 5000 50  0001 C CNN
+F 3 "~" H 3000 4900 50  0001 C CNN
+	1    3000 4900
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E4234
+P 3100 4000
+AR Path="/5C2E4234" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E4234" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E4234" Ref="#PWR042"  Part="1" 
+F 0 "#PWR042" H 3100 3850 50  0001 C CNN
+F 1 "+5V" H 3115 4173 50  0000 C CNN
+F 2 "" H 3100 4000 50  0001 C CNN
+F 3 "" H 3100 4000 50  0001 C CNN
+	1    3100 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C2E423A
+P 2700 4550
+AR Path="/5C2E423A" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E423A" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E423A" Ref="R31"  Part="1" 
+F 0 "R31" H 2770 4596 50  0000 L CNN
+F 1 "10k" H 2770 4505 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2630 4550 50  0001 C CNN
+F 3 "~" H 2700 4550 50  0001 C CNN
+	1    2700 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_2Pole TP?
+U 1 1 5C2E4240
+P 3300 4900
+AR Path="/5C2E4240" Ref="TP?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E4240" Ref="TP?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E4240" Ref="TP4"  Part="1" 
+F 0 "TP4" V 3254 4958 50  0000 L CNN
+F 1 "Test_Vds_3" V 3345 4958 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3300 4900 50  0001 C CNN
+F 3 "~" H 3300 4900 50  0001 C CNN
+	1    3300 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3300 5100 3300 5200
+Wire Wire Line
+	3300 4700 3300 4600
+$Comp
+L power:VEE #PWR?
+U 1 1 5C2E4248
+P 2700 5300
+AR Path="/5C2E4248" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E4248" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E4248" Ref="#PWR044"  Part="1" 
+F 0 "#PWR044" H 2700 5150 50  0001 C CNN
+F 1 "VEE" H 2718 5473 50  0000 C CNN
+F 2 "" H 2700 5300 50  0001 C CNN
+F 3 "" H 2700 5300 50  0001 C CNN
+	1    2700 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C2E4254
+P 1150 4900
+AR Path="/5C2E4254" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E4254" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E4254" Ref="R33"  Part="1" 
+F 0 "R33" H 1220 4946 50  0000 L CNN
+F 1 "1k" H 1220 4855 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 1080 4900 50  0001 C CNN
+F 3 "~" H 1150 4900 50  0001 C CNN
+	1    1150 4900
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	2700 5100 2700 5300
+Wire Wire Line
+	3100 5100 3100 5200
+Wire Wire Line
+	3300 4600 3100 4600
+Connection ~ 3100 4600
+Wire Wire Line
+	3100 4600 3100 4700
+Wire Wire Line
+	3300 5200 3100 5200
+Wire Wire Line
+	1500 5100 1700 5100
+Wire Wire Line
+	2700 4400 2700 4200
+Wire Wire Line
+	2700 4200 3100 4200
+Wire Wire Line
+	3100 4200 3100 4000
+Wire Wire Line
+	3100 4200 3100 4600
+Wire Wire Line
+	2500 5100 2700 5100
+Wire Wire Line
+	2500 4900 2700 4900
+Connection ~ 3100 4200
+Wire Wire Line
+	2700 4700 2700 4900
+Connection ~ 2700 4900
+Wire Wire Line
+	2700 4900 2800 4900
+Text GLabel 800  4900 0    50   Input ~ 0
+SLV3
+Text GLabel 3300 5400 2    50   Output ~ 0
+5V_SLV3
+$Comp
+L Device:C_Small C14
+U 1 1 5C2E426D
+P 2100 4000
+F 0 "C14" V 1871 4000 50  0000 C CNN
+F 1 "10u" V 1962 4000 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 4000 50  0001 C CNN
+F 3 "~" H 2100 4000 50  0001 C CNN
+	1    2100 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C16
+U 1 1 5C2E4273
+P 2100 4400
+F 0 "C16" V 1871 4400 50  0000 C CNN
+F 1 "10u" V 1962 4400 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 4400 50  0001 C CNN
+F 3 "~" H 2100 4400 50  0001 C CNN
+	1    2100 4400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 4000 2300 4000
+Wire Wire Line
+	2300 4000 2300 4200
+Wire Wire Line
+	2300 4400 2200 4400
+Wire Wire Line
+	2700 4200 2300 4200
+Connection ~ 2700 4200
+Connection ~ 2300 4200
+Wire Wire Line
+	2300 4200 2300 4400
+Wire Wire Line
+	2000 4000 1900 4000
+Wire Wire Line
+	1900 4000 1900 4200
+Wire Wire Line
+	1900 4400 2000 4400
+Wire Wire Line
+	1300 4900 1700 4900
+Wire Wire Line
+	1900 4200 1500 4200
+Wire Wire Line
+	1500 4200 1500 5100
+Connection ~ 1900 4200
+Wire Wire Line
+	1900 4200 1900 4400
+Connection ~ 1500 5100
+$Comp
+L power:GND #PWR?
+U 1 1 5C2E4289
+P 3100 6200
+AR Path="/5C2E4289" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E4289" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E4289" Ref="#PWR046"  Part="1" 
+F 0 "#PWR046" H 3100 5950 50  0001 C CNN
+F 1 "GND" H 3105 6027 50  0000 C CNN
+F 2 "" H 3100 6200 50  0001 C CNN
+F 3 "" H 3100 6200 50  0001 C CNN
+	1    3100 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Small D11
+U 1 1 5C2E428F
+P 3100 5700
+F 0 "D11" V 3054 5768 50  0000 L CNN
+F 1 "1V0" V 3145 5768 50  0000 L CNN
+F 2 "Diode_THT:D_T-1_P5.08mm_Horizontal" V 3100 5700 50  0001 C CNN
+F 3 "~" V 3100 5700 50  0001 C CNN
+	1    3100 5700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	800  4900 1000 4900
+$Comp
+L Device:Q_PMOS_GSD Q?
+U 1 1 5C2E4296
+P 6400 4900
+AR Path="/5C2E4296" Ref="Q?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E4296" Ref="Q?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E4296" Ref="Q7"  Part="1" 
+F 0 "Q7" H 6350 4750 50  0000 L CNN
+F 1 "IRLML6402" V 6400 5050 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 6600 5000 50  0001 C CNN
+F 3 "~" H 6400 4900 50  0001 C CNN
+	1    6400 4900
+	1    0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C2E429C
+P 6500 4000
+AR Path="/5C2E429C" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E429C" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E429C" Ref="#PWR043"  Part="1" 
+F 0 "#PWR043" H 6500 3850 50  0001 C CNN
+F 1 "+5V" H 6515 4173 50  0000 C CNN
+F 2 "" H 6500 4000 50  0001 C CNN
+F 3 "" H 6500 4000 50  0001 C CNN
+	1    6500 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C2E42A2
+P 6100 4550
+AR Path="/5C2E42A2" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E42A2" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E42A2" Ref="R32"  Part="1" 
+F 0 "R32" H 6170 4596 50  0000 L CNN
+F 1 "10k" H 6170 4505 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 6030 4550 50  0001 C CNN
+F 3 "~" H 6100 4550 50  0001 C CNN
+	1    6100 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint_2Pole TP?
+U 1 1 5C2E42A8
+P 6700 4900
+AR Path="/5C2E42A8" Ref="TP?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E42A8" Ref="TP?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E42A8" Ref="TP5"  Part="1" 
+F 0 "TP5" V 6654 4958 50  0000 L CNN
+F 1 "Test_Vds_4" V 6745 4958 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6700 4900 50  0001 C CNN
+F 3 "~" H 6700 4900 50  0001 C CNN
+	1    6700 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 5400 6700 5400
+Wire Wire Line
+	6700 5100 6700 5200
+Wire Wire Line
+	6700 4700 6700 4600
+$Comp
+L power:VEE #PWR?
+U 1 1 5C2E42B1
+P 6100 5300
+AR Path="/5C2E42B1" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E42B1" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E42B1" Ref="#PWR045"  Part="1" 
+F 0 "#PWR045" H 6100 5150 50  0001 C CNN
+F 1 "VEE" H 6118 5473 50  0000 C CNN
+F 2 "" H 6100 5300 50  0001 C CNN
+F 3 "" H 6100 5300 50  0001 C CNN
+	1    6100 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C2E42B7
+P 4550 4900
+AR Path="/5C2E42B7" Ref="R?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E42B7" Ref="R?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E42B7" Ref="R34"  Part="1" 
+F 0 "R34" H 4620 4946 50  0000 L CNN
+F 1 "1k" H 4620 4855 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 4480 4900 50  0001 C CNN
+F 3 "~" H 4550 4900 50  0001 C CNN
+	1    4550 4900
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6100 5100 6100 5300
+Wire Wire Line
+	6500 5100 6500 5200
+Wire Wire Line
+	6700 4600 6500 4600
+Connection ~ 6500 4600
+Wire Wire Line
+	6500 4600 6500 4700
+Wire Wire Line
+	6700 5200 6500 5200
+Connection ~ 6500 5200
+Wire Wire Line
+	6500 5200 6500 5400
+Wire Wire Line
+	4900 5100 5100 5100
+Wire Wire Line
+	6100 4400 6100 4200
+Wire Wire Line
+	6100 4200 6500 4200
+Wire Wire Line
+	6500 4200 6500 4000
+Wire Wire Line
+	6500 4200 6500 4600
+Wire Wire Line
+	5900 5100 6100 5100
+Wire Wire Line
+	5900 4900 6100 4900
+Connection ~ 6500 4200
+Wire Wire Line
+	6100 4700 6100 4900
+Connection ~ 6100 4900
+Wire Wire Line
+	6100 4900 6200 4900
+Text GLabel 4200 4900 0    50   Input ~ 0
+SLV4
+Text GLabel 6700 5400 2    50   Output ~ 0
+5V_SLV4
+$Comp
+L Device:C_Small C15
+U 1 1 5C2E42D2
+P 5500 4000
+F 0 "C15" V 5271 4000 50  0000 C CNN
+F 1 "10u" V 5362 4000 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 4000 50  0001 C CNN
+F 3 "~" H 5500 4000 50  0001 C CNN
+	1    5500 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C17
+U 1 1 5C2E42D8
+P 5500 4400
+F 0 "C17" V 5271 4400 50  0000 C CNN
+F 1 "10u" V 5362 4400 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 4400 50  0001 C CNN
+F 3 "~" H 5500 4400 50  0001 C CNN
+	1    5500 4400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5600 4000 5700 4000
+Wire Wire Line
+	5700 4000 5700 4200
+Wire Wire Line
+	5700 4400 5600 4400
+Wire Wire Line
+	6100 4200 5700 4200
+Connection ~ 6100 4200
+Connection ~ 5700 4200
+Wire Wire Line
+	5700 4200 5700 4400
+Wire Wire Line
+	5400 4000 5300 4000
+Wire Wire Line
+	5300 4000 5300 4200
+Wire Wire Line
+	5300 4400 5400 4400
+Wire Wire Line
+	4700 4900 5100 4900
+Wire Wire Line
+	5300 4200 4900 4200
+Wire Wire Line
+	4900 4200 4900 5100
+Connection ~ 5300 4200
+Wire Wire Line
+	5300 4200 5300 4400
+Connection ~ 4900 5100
+$Comp
+L power:GND #PWR?
+U 1 1 5C2E42EE
+P 6500 6200
+AR Path="/5C2E42EE" Ref="#PWR?"  Part="1" 
+AR Path="/5B9FF7BF/5C2E42EE" Ref="#PWR?"  Part="1" 
+AR Path="/5BD1B5C7/5C2E42EE" Ref="#PWR047"  Part="1" 
+F 0 "#PWR047" H 6500 5950 50  0001 C CNN
+F 1 "GND" H 6505 6027 50  0000 C CNN
+F 2 "" H 6500 6200 50  0001 C CNN
+F 3 "" H 6500 6200 50  0001 C CNN
+	1    6500 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 5600 6500 5400
+Connection ~ 6500 5400
+$Comp
+L Device:D_Small D12
+U 1 1 5C2E42F6
+P 6500 5700
+F 0 "D12" V 6454 5768 50  0000 L CNN
+F 1 "1V0" V 6545 5768 50  0000 L CNN
+F 2 "Diode_THT:D_T-1_P5.08mm_Horizontal" V 6500 5700 50  0001 C CNN
+F 3 "~" V 6500 5700 50  0001 C CNN
+	1    6500 5700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4200 4900 4400 4900
+Connection ~ 3100 5200
+Wire Wire Line
+	3100 5600 3100 5400
+Wire Wire Line
+	3100 5200 3100 5400
+Connection ~ 3100 5400
+Wire Wire Line
+	3100 5400 3300 5400
+Wire Wire Line
+	3100 5800 3100 6000
+Wire Wire Line
+	3100 6000 1500 6000
+Wire Wire Line
+	1500 5100 1500 6000
+Connection ~ 3100 6000
+Wire Wire Line
+	3100 6000 3100 6200
+Wire Wire Line
+	6500 5800 6500 6000
+Wire Wire Line
+	4900 6000 6500 6000
+Wire Wire Line
+	4900 5100 4900 6000
+Connection ~ 6500 6000
+Wire Wire Line
+	6500 6000 6500 6200
+$Comp
+L Isolator:TLP627-2 U5
+U 1 1 5C2E9C32
+P 2100 2300
+F 0 "U5" H 2100 2625 50  0000 C CNN
+F 1 "TLP627-2" H 2100 2534 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 1800 2100 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 2100 2300 50  0001 L CNN
+	1    2100 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Isolator:TLP627-2 U6
+U 1 1 5C2E9E3C
+P 2100 5000
+F 0 "U6" H 2100 5325 50  0000 C CNN
+F 1 "TLP627-2" H 2100 5234 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 1800 4800 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 2100 5000 50  0001 L CNN
+	1    2100 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Isolator:TLP627-2 U5
+U 2 1 5C2E9EE1
+P 5500 2300
+F 0 "U5" H 5500 2625 50  0000 C CNN
+F 1 "TLP627-2" H 5500 2534 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 2100 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 2300 50  0001 L CNN
+	2    5500 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Isolator:TLP627-2 U6
+U 2 1 5C2E9F94
+P 5500 5000
+F 0 "U6" H 5500 5325 50  0000 C CNN
+F 1 "TLP627-2" H 5500 5234 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 4800 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 5000 50  0001 L CNN
+	2    5500 5000
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
