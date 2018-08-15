@@ -152,44 +152,11 @@ F 3 "~" H 2100 1300 50  0001 C CNN
 	1    2100 1300
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:C_Small C12
-U 1 1 5BD34986
-P 2100 1700
-F 0 "C12" V 1871 1700 50  0000 C CNN
-F 1 "10u" V 1962 1700 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 1700 50  0001 C CNN
-F 3 "~" H 2100 1700 50  0001 C CNN
-	1    2100 1700
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2200 1300 2300 1300
-Wire Wire Line
-	2300 1300 2300 1500
-Wire Wire Line
-	2300 1700 2200 1700
-Wire Wire Line
-	2700 1500 2300 1500
 Connection ~ 2700 1500
-Connection ~ 2300 1500
-Wire Wire Line
-	2300 1500 2300 1700
-Wire Wire Line
-	2000 1300 1900 1300
-Wire Wire Line
-	1900 1300 1900 1500
-Wire Wire Line
-	1900 1700 2000 1700
 Wire Wire Line
 	1300 2200 1700 2200
 Wire Wire Line
-	1900 1500 1500 1500
-Wire Wire Line
 	1500 1500 1500 2400
-Connection ~ 1900 1500
-Wire Wire Line
-	1900 1500 1900 1700
 Connection ~ 1500 2400
 $Comp
 L power:GND #PWR?
@@ -357,44 +324,11 @@ F 3 "~" H 5500 1300 50  0001 C CNN
 	1    5500 1300
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:C_Small C13
-U 1 1 5C173ABB
-P 5500 1700
-F 0 "C13" V 5271 1700 50  0000 C CNN
-F 1 "10u" V 5362 1700 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 1700 50  0001 C CNN
-F 3 "~" H 5500 1700 50  0001 C CNN
-	1    5500 1700
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5600 1300 5700 1300
-Wire Wire Line
-	5700 1300 5700 1500
-Wire Wire Line
-	5700 1700 5600 1700
-Wire Wire Line
-	6100 1500 5700 1500
 Connection ~ 6100 1500
-Connection ~ 5700 1500
-Wire Wire Line
-	5700 1500 5700 1700
-Wire Wire Line
-	5400 1300 5300 1300
-Wire Wire Line
-	5300 1300 5300 1500
-Wire Wire Line
-	5300 1700 5400 1700
 Wire Wire Line
 	4700 2200 5100 2200
 Wire Wire Line
-	5300 1500 4900 1500
-Wire Wire Line
 	4900 1500 4900 2400
-Connection ~ 5300 1500
-Wire Wire Line
-	5300 1500 5300 1700
 Connection ~ 4900 2400
 $Comp
 L power:GND #PWR?
@@ -586,44 +520,11 @@ F 3 "~" H 2100 4000 50  0001 C CNN
 	1    2100 4000
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:C_Small C16
-U 1 1 5C2E4273
-P 2100 4400
-F 0 "C16" V 1871 4400 50  0000 C CNN
-F 1 "10u" V 1962 4400 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 4400 50  0001 C CNN
-F 3 "~" H 2100 4400 50  0001 C CNN
-	1    2100 4400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2200 4000 2300 4000
-Wire Wire Line
-	2300 4000 2300 4200
-Wire Wire Line
-	2300 4400 2200 4400
-Wire Wire Line
-	2700 4200 2300 4200
 Connection ~ 2700 4200
-Connection ~ 2300 4200
-Wire Wire Line
-	2300 4200 2300 4400
-Wire Wire Line
-	2000 4000 1900 4000
-Wire Wire Line
-	1900 4000 1900 4200
-Wire Wire Line
-	1900 4400 2000 4400
 Wire Wire Line
 	1300 4900 1700 4900
 Wire Wire Line
-	1900 4200 1500 4200
-Wire Wire Line
 	1500 4200 1500 5100
-Connection ~ 1900 4200
-Wire Wire Line
-	1900 4200 1900 4400
 Connection ~ 1500 5100
 $Comp
 L power:GND #PWR?
@@ -791,44 +692,11 @@ F 3 "~" H 5500 4000 50  0001 C CNN
 	1    5500 4000
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:C_Small C17
-U 1 1 5C2E42D8
-P 5500 4400
-F 0 "C17" V 5271 4400 50  0000 C CNN
-F 1 "10u" V 5362 4400 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 4400 50  0001 C CNN
-F 3 "~" H 5500 4400 50  0001 C CNN
-	1    5500 4400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5600 4000 5700 4000
-Wire Wire Line
-	5700 4000 5700 4200
-Wire Wire Line
-	5700 4400 5600 4400
-Wire Wire Line
-	6100 4200 5700 4200
 Connection ~ 6100 4200
-Connection ~ 5700 4200
-Wire Wire Line
-	5700 4200 5700 4400
-Wire Wire Line
-	5400 4000 5300 4000
-Wire Wire Line
-	5300 4000 5300 4200
-Wire Wire Line
-	5300 4400 5400 4400
 Wire Wire Line
 	4700 4900 5100 4900
 Wire Wire Line
-	5300 4200 4900 4200
-Wire Wire Line
 	4900 4200 4900 5100
-Connection ~ 5300 4200
-Wire Wire Line
-	5300 4200 5300 4400
 Connection ~ 4900 5100
 $Comp
 L power:GND #PWR?
@@ -889,12 +757,12 @@ Wire Wire Line
 $Comp
 L Isolator:TLP627-2 U5
 U 1 1 5C2E9C32
-P 2100 2300
-F 0 "U5" H 2100 2625 50  0000 C CNN
-F 1 "TLP627-2" H 2100 2534 50  0000 C CNN
-F 2 "Package_DIP:DIP-8_W7.62mm" H 1800 2100 50  0001 L CIN
-F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 2100 2300 50  0001 L CNN
-	1    2100 2300
+P 5500 2300
+F 0 "U5" H 5500 2625 50  0000 C CNN
+F 1 "TLP627-2" H 5500 2534 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 2100 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 2300 50  0001 L CNN
+	1    5500 2300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -911,12 +779,12 @@ $EndComp
 $Comp
 L Isolator:TLP627-2 U5
 U 2 1 5C2E9EE1
-P 5500 2300
-F 0 "U5" H 5500 2625 50  0000 C CNN
-F 1 "TLP627-2" H 5500 2534 50  0000 C CNN
-F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 2100 50  0001 L CIN
-F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 2300 50  0001 L CNN
-	2    5500 2300
+P 2100 2300
+F 0 "U5" H 2100 2625 50  0000 C CNN
+F 1 "TLP627-2" H 2100 2534 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 1800 2100 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 2100 2300 50  0001 L CNN
+	2    2100 2300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -929,5 +797,137 @@ F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 4800 50  0001 L CIN
 F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 5000 50  0001 L CNN
 	2    5500 5000
 	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 4200 1500 4200
+Wire Wire Line
+	2000 4000 1900 4000
+Wire Wire Line
+	2700 4200 2300 4200
+Wire Wire Line
+	2200 4000 2300 4000
+Wire Wire Line
+	2300 4000 2300 4200
+Wire Wire Line
+	1900 4000 1900 4200
+Connection ~ 1900 4200
+Wire Wire Line
+	1900 4200 1900 4400
+Wire Wire Line
+	1900 4400 2000 4400
+Wire Wire Line
+	2300 4400 2200 4400
+Connection ~ 2300 4200
+Wire Wire Line
+	2300 4200 2300 4400
+Wire Wire Line
+	5300 4200 4900 4200
+Wire Wire Line
+	5400 4000 5300 4000
+Wire Wire Line
+	6100 4200 5700 4200
+Wire Wire Line
+	5600 4000 5700 4000
+Wire Wire Line
+	5700 4400 5600 4400
+Wire Wire Line
+	5700 4200 5700 4400
+Connection ~ 5700 4200
+Wire Wire Line
+	5700 4000 5700 4200
+Wire Wire Line
+	5300 4000 5300 4200
+Connection ~ 5300 4200
+Wire Wire Line
+	5300 4200 5300 4400
+Wire Wire Line
+	5300 4400 5400 4400
+Wire Wire Line
+	5300 1500 4900 1500
+Wire Wire Line
+	5400 1300 5300 1300
+Wire Wire Line
+	6100 1500 5700 1500
+Wire Wire Line
+	5600 1300 5700 1300
+Wire Wire Line
+	5700 1300 5700 1500
+Wire Wire Line
+	5700 1700 5600 1700
+Connection ~ 5700 1500
+Wire Wire Line
+	5700 1500 5700 1700
+Wire Wire Line
+	5300 1300 5300 1500
+Connection ~ 5300 1500
+Wire Wire Line
+	5300 1500 5300 1700
+Wire Wire Line
+	5300 1700 5400 1700
+Wire Wire Line
+	1900 1500 1500 1500
+Wire Wire Line
+	2000 1300 1900 1300
+Wire Wire Line
+	2700 1500 2300 1500
+Wire Wire Line
+	2200 1300 2300 1300
+Wire Wire Line
+	1900 1300 1900 1500
+Wire Wire Line
+	2300 1300 2300 1500
+Connection ~ 2300 1500
+Wire Wire Line
+	2300 1500 2300 1700
+Wire Wire Line
+	2300 1700 2200 1700
+Wire Wire Line
+	1900 1700 2000 1700
+Connection ~ 1900 1500
+Wire Wire Line
+	1900 1500 1900 1700
+$Comp
+L Device:C_Small C13
+U 1 1 5C173ABB
+P 5500 1700
+F 0 "C13" V 5271 1700 50  0000 C CNN
+F 1 "10u" V 5362 1700 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 1700 50  0001 C CNN
+F 3 "~" H 5500 1700 50  0001 C CNN
+	1    5500 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C17
+U 1 1 5C2E42D8
+P 5500 4400
+F 0 "C17" V 5271 4400 50  0000 C CNN
+F 1 "10u" V 5362 4400 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 5500 4400 50  0001 C CNN
+F 3 "~" H 5500 4400 50  0001 C CNN
+	1    5500 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C16
+U 1 1 5C2E4273
+P 2100 4400
+F 0 "C16" V 1871 4400 50  0000 C CNN
+F 1 "10u" V 1962 4400 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 4400 50  0001 C CNN
+F 3 "~" H 2100 4400 50  0001 C CNN
+	1    2100 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C12
+U 1 1 5BD34986
+P 2100 1700
+F 0 "C12" V 1871 1700 50  0000 C CNN
+F 1 "10u" V 1962 1700 50  0000 C CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W3.0mm_P5.00mm_FKS2_FKP2_MKS2_MKP2" H 2100 1700 50  0001 C CNN
+F 3 "~" H 2100 1700 50  0001 C CNN
+	1    2100 1700
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC
