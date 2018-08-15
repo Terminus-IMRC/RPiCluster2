@@ -57,24 +57,6 @@ F 3 "~" H 2700 1850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint_2Pole TP?
-U 1 1 5BD329A4
-P 3300 2200
-AR Path="/5BD329A4" Ref="TP?"  Part="1" 
-AR Path="/5B9FF7BF/5BD329A4" Ref="TP?"  Part="1" 
-AR Path="/5BD1B5C7/5BD329A4" Ref="TP2"  Part="1" 
-F 0 "TP2" V 3254 2258 50  0000 L CNN
-F 1 "Test_Vds_1" V 3345 2258 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3300 2200 50  0001 C CNN
-F 3 "~" H 3300 2200 50  0001 C CNN
-	1    3300 2200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3300 2400 3300 2500
-Wire Wire Line
-	3300 2000 3300 1900
-$Comp
 L power:VEE #PWR?
 U 1 1 5BD329AE
 P 2700 2600
@@ -109,11 +91,6 @@ Wire Wire Line
 Wire Wire Line
 	3100 2400 3100 2500
 Wire Wire Line
-	3300 1900 3100 1900
-Connection ~ 3100 1900
-Wire Wire Line
-	3100 1900 3100 2000
-Wire Wire Line
 	3300 2500 3100 2500
 Wire Wire Line
 	1500 2400 1700 2400
@@ -123,8 +100,6 @@ Wire Wire Line
 	2700 1500 3100 1500
 Wire Wire Line
 	3100 1500 3100 1300
-Wire Wire Line
-	3100 1500 3100 1900
 Wire Wire Line
 	2500 2400 2700 2400
 Wire Wire Line
@@ -227,26 +202,8 @@ F 3 "~" H 6100 1850 50  0001 C CNN
 	1    6100 1850
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint_2Pole TP?
-U 1 1 5C173A7E
-P 6700 2200
-AR Path="/5C173A7E" Ref="TP?"  Part="1" 
-AR Path="/5B9FF7BF/5C173A7E" Ref="TP?"  Part="1" 
-AR Path="/5BD1B5C7/5C173A7E" Ref="TP3"  Part="1" 
-F 0 "TP3" V 6654 2258 50  0000 L CNN
-F 1 "Test_Vds_2" V 6745 2258 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6700 2200 50  0001 C CNN
-F 3 "~" H 6700 2200 50  0001 C CNN
-	1    6700 2200
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	6500 2700 6700 2700
-Wire Wire Line
-	6700 2400 6700 2500
-Wire Wire Line
-	6700 2000 6700 1900
 $Comp
 L power:VEE #PWR?
 U 1 1 5C173A87
@@ -278,18 +235,6 @@ $EndComp
 Wire Wire Line
 	6100 2400 6100 2600
 Wire Wire Line
-	6500 2400 6500 2500
-Wire Wire Line
-	6700 1900 6500 1900
-Connection ~ 6500 1900
-Wire Wire Line
-	6500 1900 6500 2000
-Wire Wire Line
-	6700 2500 6500 2500
-Connection ~ 6500 2500
-Wire Wire Line
-	6500 2500 6500 2700
-Wire Wire Line
 	4900 2400 5100 2400
 Wire Wire Line
 	6100 1700 6100 1500
@@ -297,8 +242,6 @@ Wire Wire Line
 	6100 1500 6500 1500
 Wire Wire Line
 	6500 1500 6500 1300
-Wire Wire Line
-	6500 1500 6500 1900
 Wire Wire Line
 	5900 2400 6100 2400
 Wire Wire Line
@@ -429,24 +372,6 @@ F 3 "~" H 2700 4550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint_2Pole TP?
-U 1 1 5C2E4240
-P 3300 4900
-AR Path="/5C2E4240" Ref="TP?"  Part="1" 
-AR Path="/5B9FF7BF/5C2E4240" Ref="TP?"  Part="1" 
-AR Path="/5BD1B5C7/5C2E4240" Ref="TP4"  Part="1" 
-F 0 "TP4" V 3254 4958 50  0000 L CNN
-F 1 "Test_Vds_3" V 3345 4958 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3300 4900 50  0001 C CNN
-F 3 "~" H 3300 4900 50  0001 C CNN
-	1    3300 4900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3300 5100 3300 5200
-Wire Wire Line
-	3300 4700 3300 4600
-$Comp
 L power:VEE #PWR?
 U 1 1 5C2E4248
 P 2700 5300
@@ -477,15 +402,6 @@ $EndComp
 Wire Wire Line
 	2700 5100 2700 5300
 Wire Wire Line
-	3100 5100 3100 5200
-Wire Wire Line
-	3300 4600 3100 4600
-Connection ~ 3100 4600
-Wire Wire Line
-	3100 4600 3100 4700
-Wire Wire Line
-	3300 5200 3100 5200
-Wire Wire Line
 	1500 5100 1700 5100
 Wire Wire Line
 	2700 4400 2700 4200
@@ -493,8 +409,6 @@ Wire Wire Line
 	2700 4200 3100 4200
 Wire Wire Line
 	3100 4200 3100 4000
-Wire Wire Line
-	3100 4200 3100 4600
 Wire Wire Line
 	2500 5100 2700 5100
 Wire Wire Line
@@ -595,26 +509,8 @@ F 3 "~" H 6100 4550 50  0001 C CNN
 	1    6100 4550
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:TestPoint_2Pole TP?
-U 1 1 5C2E42A8
-P 6700 4900
-AR Path="/5C2E42A8" Ref="TP?"  Part="1" 
-AR Path="/5B9FF7BF/5C2E42A8" Ref="TP?"  Part="1" 
-AR Path="/5BD1B5C7/5C2E42A8" Ref="TP5"  Part="1" 
-F 0 "TP5" V 6654 4958 50  0000 L CNN
-F 1 "Test_Vds_4" V 6745 4958 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6700 4900 50  0001 C CNN
-F 3 "~" H 6700 4900 50  0001 C CNN
-	1    6700 4900
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	6500 5400 6700 5400
-Wire Wire Line
-	6700 5100 6700 5200
-Wire Wire Line
-	6700 4700 6700 4600
 $Comp
 L power:VEE #PWR?
 U 1 1 5C2E42B1
@@ -646,18 +542,6 @@ $EndComp
 Wire Wire Line
 	6100 5100 6100 5300
 Wire Wire Line
-	6500 5100 6500 5200
-Wire Wire Line
-	6700 4600 6500 4600
-Connection ~ 6500 4600
-Wire Wire Line
-	6500 4600 6500 4700
-Wire Wire Line
-	6700 5200 6500 5200
-Connection ~ 6500 5200
-Wire Wire Line
-	6500 5200 6500 5400
-Wire Wire Line
 	4900 5100 5100 5100
 Wire Wire Line
 	6100 4400 6100 4200
@@ -665,8 +549,6 @@ Wire Wire Line
 	6100 4200 6500 4200
 Wire Wire Line
 	6500 4200 6500 4000
-Wire Wire Line
-	6500 4200 6500 4600
 Wire Wire Line
 	5900 5100 6100 5100
 Wire Wire Line
@@ -728,11 +610,8 @@ F 3 "~" V 6500 5700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4200 4900 4400 4900
-Connection ~ 3100 5200
 Wire Wire Line
 	3100 5600 3100 5400
-Wire Wire Line
-	3100 5200 3100 5400
 Connection ~ 3100 5400
 Wire Wire Line
 	3100 5400 3300 5400
@@ -930,4 +809,45 @@ F 3 "~" H 2100 1700 50  0001 C CNN
 	1    2100 1700
 	0    1    1    0   
 $EndComp
+$Comp
+L Connector:TestPoint_Probe TP2
+U 1 1 5BA93676
+P 3300 2500
+F 0 "TP2" H 3453 2602 50  0000 L CNN
+F 1 "Test_5V_SLV1" H 3453 2511 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3500 2500 50  0001 C CNN
+F 3 "~" H 3500 2500 50  0001 C CNN
+	1    3300 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 1500 3100 1800
+Wire Wire Line
+	6500 1500 6500 2000
+Wire Wire Line
+	6500 2400 6500 2700
+Wire Wire Line
+	3100 5100 3100 5400
+Wire Wire Line
+	3100 4200 3100 4700
+Wire Wire Line
+	6500 4200 6500 4700
+Wire Wire Line
+	6500 5100 6500 5400
+$Comp
+L Connector:TestPoint_Probe TP3
+U 1 1 5BA94640
+P 3300 1800
+F 0 "TP3" H 3453 1902 50  0000 L CNN
+F 1 "Test_5V" H 3453 1811 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3500 1800 50  0001 C CNN
+F 3 "~" H 3500 1800 50  0001 C CNN
+	1    3300 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 1800 3100 1800
+Connection ~ 3100 1800
+Wire Wire Line
+	3100 1800 3100 2000
 $EndSCHEMATC
