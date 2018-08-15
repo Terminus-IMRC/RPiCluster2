@@ -768,12 +768,12 @@ $EndComp
 $Comp
 L Isolator:TLP627-2 U6
 U 1 1 5C2E9E3C
-P 2100 5000
-F 0 "U6" H 2100 5325 50  0000 C CNN
-F 1 "TLP627-2" H 2100 5234 50  0000 C CNN
-F 2 "Package_DIP:DIP-8_W7.62mm" H 1800 4800 50  0001 L CIN
-F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 2100 5000 50  0001 L CNN
-	1    2100 5000
+P 5500 5000
+F 0 "U6" H 5500 5325 50  0000 C CNN
+F 1 "TLP627-2" H 5500 5234 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 4800 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 5000 50  0001 L CNN
+	1    5500 5000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -790,12 +790,12 @@ $EndComp
 $Comp
 L Isolator:TLP627-2 U6
 U 2 1 5C2E9F94
-P 5500 5000
-F 0 "U6" H 5500 5325 50  0000 C CNN
-F 1 "TLP627-2" H 5500 5234 50  0000 C CNN
-F 2 "Package_DIP:DIP-8_W7.62mm" H 5200 4800 50  0001 L CIN
-F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 5500 5000 50  0001 L CNN
-	2    5500 5000
+P 2100 5000
+F 0 "U6" H 2100 5325 50  0000 C CNN
+F 1 "TLP627-2" H 2100 5234 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 1800 4800 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=16914&prodName=TLP627" H 2100 5000 50  0001 L CNN
+	2    2100 5000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line

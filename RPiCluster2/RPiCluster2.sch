@@ -263,9 +263,9 @@ Wire Wire Line
 	900  6200 1700 6200
 Wire Wire Line
 	900  6100 1400 6100
-Text Label 1000 2400 2    50   ~ 0
+Text Label 1000 2300 2    50   ~ 0
 MUX_A
-Text Label 1000 2500 2    50   ~ 0
+Text Label 1000 2400 2    50   ~ 0
 MUX_B
 Wire Wire Line
 	1000 2400 1200 2400
@@ -366,7 +366,7 @@ Wire Wire Line
 Connection ~ 1700 1200
 Connection ~ 2900 1200
 Connection ~ 2300 1900
-Text Label 1000 2600 2    50   ~ 0
+Text Label 1000 2200 2    50   ~ 0
 SER_EN
 Wire Wire Line
 	1000 2600 1200 2600
@@ -418,9 +418,9 @@ Text GLabel 1000 2000 0    50   Output ~ 0
 SLV1
 Text GLabel 1000 2100 0    50   Output ~ 0
 SLV2
-Text GLabel 1000 2200 0    50   Output ~ 0
+Text GLabel 1000 2500 0    50   Output ~ 0
 SLV3
-Text GLabel 1000 2300 0    50   Output ~ 0
+Text GLabel 1000 2600 0    50   Output ~ 0
 SLV4
 Text GLabel 3100 2300 2    50   BiDi ~ 0
 SCL
