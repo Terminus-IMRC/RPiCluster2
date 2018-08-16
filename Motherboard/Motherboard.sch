@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Isolator-cache
-LIBS:RPiCluster2-cache
+LIBS:Motherboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -433,54 +432,6 @@ Wire Wire Line
 Connection ~ 8200 2900
 Wire Wire Line
 	8200 2900 8200 3000
-$Comp
-L Device:CP_Small C?
-U 1 1 5B806DC6
-P 10200 5000
-AR Path="/5B7E695F/5B806DC6" Ref="C?"  Part="1" 
-AR Path="/5B806DC6" Ref="C7"  Part="1" 
-F 0 "C7" H 10112 4954 50  0000 R CNN
-F 1 "10u" H 10112 5045 50  0000 R CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 10200 5000 50  0001 C CNN
-F 3 "~" H 10200 5000 50  0001 C CNN
-	1    10200 5000
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5B806DCD
-P 10600 4800
-AR Path="/5B7E695F/5B806DCD" Ref="#PWR?"  Part="1" 
-AR Path="/5B806DCD" Ref="#PWR022"  Part="1" 
-F 0 "#PWR022" H 10600 4550 50  0001 C CNN
-F 1 "GND" H 10605 4627 50  0000 C CNN
-F 2 "" H 10600 4800 50  0001 C CNN
-F 3 "" H 10600 4800 50  0001 C CNN
-	1    10600 4800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10200 4900 10200 4600
-Wire Wire Line
-	10200 4600 10600 4600
-Wire Wire Line
-	10600 4600 10600 4800
-$Comp
-L power:VEE #PWR025
-U 1 1 5B806DD6
-P 10200 5400
-AR Path="/5B806DD6" Ref="#PWR025"  Part="1" 
-AR Path="/5B9FF7BF/5B806DD6" Ref="#PWR?"  Part="1" 
-AR Path="/5B7E695F/5B806DD6" Ref="#PWR?"  Part="1" 
-F 0 "#PWR025" H 10200 5250 50  0001 C CNN
-F 1 "VEE" H 10218 5573 50  0000 C CNN
-F 2 "" H 10200 5400 50  0001 C CNN
-F 3 "" H 10200 5400 50  0001 C CNN
-	1    10200 5400
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	10200 5400 10200 5100
 Wire Wire Line
 	8800 1900 9100 1900
 Wire Wire Line
@@ -830,8 +781,6 @@ F 3 "~" H 700 6250 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1200 6400 1200 6700
-Wire Wire Line
-	1700 6400 1700 6600
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5B819D7C
@@ -854,24 +803,12 @@ Wire Wire Line
 	700  7200 700  7400
 Connection ~ 700  7200
 Wire Wire Line
-	700  6800 700  6500
-Wire Wire Line
 	700  6100 700  5900
-Wire Wire Line
-	2700 6500 700  6500
-Connection ~ 700  6500
-Wire Wire Line
-	700  6500 700  6400
 Wire Wire Line
 	2700 6700 1200 6700
 Connection ~ 1200 6700
 Wire Wire Line
 	1200 6700 1200 6800
-Wire Wire Line
-	2700 6600 1700 6600
-Connection ~ 1700 6600
-Wire Wire Line
-	1700 6600 1700 6800
 $Comp
 L Connector_Generic:Conn_02x12_Top_Bottom J?
 U 1 1 5B862188
@@ -1721,4 +1658,18 @@ Wire Wire Line
 	5200 1600 5200 1700
 Wire Wire Line
 	8800 1800 9100 1800
+Wire Wire Line
+	700  6400 700  6600
+Wire Wire Line
+	1700 6400 1700 6500
+Wire Wire Line
+	2700 6500 1700 6500
+Connection ~ 1700 6500
+Wire Wire Line
+	1700 6500 1700 6800
+Wire Wire Line
+	2700 6600 700  6600
+Connection ~ 700  6600
+Wire Wire Line
+	700  6600 700  6800
 $EndSCHEMATC
