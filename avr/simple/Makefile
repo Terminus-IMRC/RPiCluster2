@@ -10,7 +10,7 @@ AVRDUDE_PARTNO := t13
 AVRDUDE_BAUDRATE := 19200
 
 TARGET_ARCH := -mmcu=$(MCU)
-CFLAGS += -pipe -W -Wall -Wextra -O3
+CFLAGS += -std=c99 -pipe -W -Wall -Wextra -O3
 LDLIBS +=
 
 FLASH_ELF := flash.elf
