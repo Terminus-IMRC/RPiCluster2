@@ -885,9 +885,9 @@ Wire Wire Line
 	7600 4600 7400 4600
 Wire Wire Line
 	7400 4600 7400 4800
-Text Label 3100 5400 0    50   ~ 0
-TXD_SLV
 Text Label 3100 5000 0    50   ~ 0
+TXD_SLV
+Text Label 3100 5400 0    50   ~ 0
 RXD_SLV
 Text Label 6700 6000 2    50   ~ 0
 TXD_SLV
