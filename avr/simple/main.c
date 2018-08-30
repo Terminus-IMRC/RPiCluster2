@@ -3,7 +3,7 @@
  * avrdude: -U lfuse:w:0x6b:m -U hfuse:w:0xf9:m
  */
 
-#define F_CPU (128000UL / 8)
+#define F_CPU (128e3 / 8)
 #include <avr/io.h>
 #include <util/delay.h>
 
