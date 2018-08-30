@@ -1075,8 +1075,6 @@ F 3 "" H 6500 3800 50  0001 C CNN
 	1    6500 3800
 	1    0    0    -1  
 $EndComp
-Text Notes 5000 6300 0    50   ~ 0
-xxx: Is this pull-down resistor needed?
 $Comp
 L Connector:Conn_01x03_Male J5
 U 1 1 5B946D73
