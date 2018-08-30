@@ -9,18 +9,44 @@
 
 int main(void)
 {
-    /*
-     * PB1 is connected to nowhere, so enable the pull-up resistor on it.
+    uint16_t t;
+
+    /* Set all pins as input.
      */
-    PORTB |= _BV(PORTB1);
+    DDRB = 0;
+    /* PB[2-4] are not connected to anywhere this time, so enable the pull-up
+     * resistor on it.
+     */
+    PORTB = _BV(PORTB2) | _BV(PORTB3) | _BV(PORTB4);
 
-    _delay_ms(3000);
+retry:
+    DDRB &= ~_BV(DDB0);
+    _delay_ms(5000);
 
-    /*
-     * PB0 is connected to #PS_ON and it's pulled up by power supply, so let it
+    /* PB0 is connected to #PS_ON and it's pulled up by power supply, so let it
      * down.
      */
     DDRB |= _BV(DDB0);
+
+    /* PB1 is connected to PWR_OK.
+     */
+    for (t = 0; ; ) {
+        /* PWR_OK risetime T4<=10ms. */
+        _delay_ms(11);
+        if (PINB & _BV(PINB1))
+            break;
+        t += 11;
+        if (t > 500)
+            /* The power supply takes too long time to boot up, or it's already
+             * down.
+             */
+            goto retry;
+    }
+    /* If the power supply becomes not OK after it becomes OK, turn it off.
+     */
+    for (; ; )
+        if (!(PINB & _BV(PINB1)))
+            goto retry;
 
     /* A deep dive into an infinite loop. */
     return 0;
