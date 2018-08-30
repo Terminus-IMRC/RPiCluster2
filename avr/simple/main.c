@@ -42,6 +42,7 @@ retry:
              */
             goto retry;
     }
+    _delay_ms(11);
     /* If the power supply becomes not OK after it becomes OK, turn it off.
      */
     for (; ; )
