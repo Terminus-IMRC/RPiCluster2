@@ -6,7 +6,8 @@ MCU := attiny13a
 AVRDUDE_PROGRAMMER := ft232r
 AVRDUDE_PORT := ft0
 AVRDUDE_PARTNO := t13
-AVRDUDE_BAUDRATE := 300
+# Search for an appropriate one if this baud rate fails to communiate with AVR.
+AVRDUDE_BAUDRATE := 19200
 
 TARGET_ARCH := -mmcu=$(MCU)
 CFLAGS += -pipe -W -Wall -Wextra -O3
