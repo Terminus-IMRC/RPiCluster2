@@ -624,7 +624,6 @@ F 3 "~" H 1200 6950 50  0001 C CNN
 	1    1200 6950
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2700 6400
 Wire Wire Line
 	1200 5900 1200 6100
 Wire Wire Line
@@ -1672,4 +1671,8 @@ Wire Wire Line
 Connection ~ 700  6600
 Wire Wire Line
 	700  6600 700  6800
+Text Label 2400 6400 2    50   ~ 0
+PWR_OK
+Wire Wire Line
+	2400 6400 2700 6400
 $EndSCHEMATC
