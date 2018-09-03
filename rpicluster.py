@@ -40,7 +40,7 @@ class RPi_Switcher(object):
 
             self._device = I2C.get_i2c_device(address)
 
-            self.gpio_bytes = int(math.ceil(self.NUM_GPIO / 8.0))
+            self.gpio_bytes = int(ceil(self.NUM_GPIO / 8.0))
 
             old_iodir = self._device.readList(self.IODIR, self.gpio_bytes)
             if verbose:
