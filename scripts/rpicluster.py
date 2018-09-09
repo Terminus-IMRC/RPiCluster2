@@ -118,7 +118,7 @@ class RPi_Switcher(object):
             try:
                 mcp = self.init_mcp_of_slave(4*i)
             except OSError:
-                pass
+                mcp = None
             self.mcps[i] = mcp
             a.append(mcp)
         return a
@@ -131,10 +131,11 @@ class RPi_Switcher(object):
         mcps = self.init_all_mcps()
         mcp_idx = n // self.NUM_RPIS_PER_MCP
         if mcps[mcp_idx] is None:
-            raise IOError('MCP device', mcp_idx, 'which corresponds to slave',
-                    n, 'is not found')
+            raise IOError('MCP device %d ' % mcp_idx +
+                    'which corresponds to slave %d is not found' % n)
         for mcp in mcps:
-            mcp.enable_serial(False)
+            if mcp is not None:
+                mcp.enable_serial(False)
         self.mcps[mcp_idx].select_serial(n % self.NUM_RPIS_PER_MCP)
         self.mcps[mcp_idx].enable_serial(True)
 
