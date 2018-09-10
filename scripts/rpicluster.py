@@ -151,15 +151,20 @@ class RPi_Switcher(object):
 
     def select_serial(self, n):
         self.init_all_mcps()
-        mcp_idx = n // self.NUM_RPIS_PER_MCP
-        if self.mcps[mcp_idx] is None:
-            raise IOError('MCP device %d ' % mcp_idx +
-                    'which corresponds to slave %d is not found' % n)
+
+        if n >= 0:
+            mcp_idx = n // self.NUM_RPIS_PER_MCP
+            if self.mcps[mcp_idx] is None:
+                raise IOError('MCP device %d ' % mcp_idx +
+                        'which corresponds to slave %d is not found' % n)
+
         for mcp in self.mcps:
             if mcp is not None:
                 mcp.enable_serial(False)
-        self.mcps[mcp_idx].select_serial(n % self.NUM_RPIS_PER_MCP)
-        self.mcps[mcp_idx].enable_serial(True)
+
+        if n >= 0:
+            self.mcps[mcp_idx].select_serial(n % self.NUM_RPIS_PER_MCP)
+            self.mcps[mcp_idx].enable_serial(True)
 
     def get_serial(self):
         self.init_all_mcps()
