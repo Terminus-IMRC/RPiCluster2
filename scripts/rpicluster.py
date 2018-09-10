@@ -101,13 +101,20 @@ class RPi_Switcher(object):
 
         def get_status_of_pin(self, pin):
             assert(pin < self.gpio_bytes * 8)
-            idx = pin // 8
-            off = pin % 8
-            return bool(self.gpio[idx] & (1<<off))
+            return bool(self.gpio[pin // 8] & (1 << (pin % 8)))
 
         def get_power(self, n):
             assert(0 <= n < self.NUM_RPIS_PER_MCP)
             return self.get_status_of_pin(self.POWER_PINS[n])
+
+        def get_serial(self):
+            if not self.get_status_of_pin(self.SERIAL_EN_PIN):
+                return -1
+            mux = 0
+            for i in range(len(self.SERIAL_MUX_PINS)):
+                mux |= self.get_status_of_pin(self.SERIAL_MUX_PINS[i]) << i
+            return mux
+
 
     def __init__(self, verbose=False, dry_run=False):
         self.verbose = verbose
@@ -125,15 +132,11 @@ class RPi_Switcher(object):
         return mcp
 
     def init_all_mcps(self):
-        a = []
         for i in range(self.MAX_MCPS):
             try:
-                mcp = self.init_mcp_of_slave(4*i)
+                mcp = self.init_mcp_of_slave(self.NUM_RPIS_PER_MCP * i)
             except OSError:
-                mcp = None
-            self.mcps[i] = mcp
-            a.append(mcp)
-        return a
+                pass
 
     def set_power(self, n, power):
         mcp = self.init_mcp_of_slave(n)
@@ -147,16 +150,26 @@ class RPi_Switcher(object):
         return mcp.get_power(n % self.NUM_RPIS_PER_MCP)
 
     def select_serial(self, n):
-        mcps = self.init_all_mcps()
+        self.init_all_mcps()
         mcp_idx = n // self.NUM_RPIS_PER_MCP
-        if mcps[mcp_idx] is None:
+        if self.mcps[mcp_idx] is None:
             raise IOError('MCP device %d ' % mcp_idx +
                     'which corresponds to slave %d is not found' % n)
-        for mcp in mcps:
+        for mcp in self.mcps:
             if mcp is not None:
                 mcp.enable_serial(False)
         self.mcps[mcp_idx].select_serial(n % self.NUM_RPIS_PER_MCP)
         self.mcps[mcp_idx].enable_serial(True)
+
+    def get_serial(self):
+        self.init_all_mcps()
+        for i in range(len(self.mcps)):
+            mcp = self.mcps[i]
+            if mcp is not None:
+                stat = mcp.get_serial()
+                if stat >= 0:
+                    return self.NUM_RPIS_PER_MCP * i + stat
+        return -1
 
 
 def main():
@@ -179,7 +192,7 @@ def main():
             help='RPi no. to connect serial to')
     parser.add_option('-i', '--info',
             action='append', type='str', dest='info',
-            help='RPi no. or "s" (serial) to check its status (0=off, 1=on)')
+            help='RPi no. or "s" (serial) to check its status')
 
     (options, args) = parser.parse_args()
     if len(args) != 0:
@@ -206,11 +219,10 @@ def main():
     if options.info is not None:
         for s in options.info:
             if s == "s":
-                pass
+                print(sw.get_serial())
             else:
                 n = int(s, base=0)
-                i = sw.get_power(n)
-                print(i)
+                print(sw.get_power(n))
 
 
 if __name__ == '__main__':
