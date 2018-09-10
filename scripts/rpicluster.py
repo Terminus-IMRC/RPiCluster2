@@ -41,6 +41,8 @@ class RPi_Switcher(object):
             self._device = I2C.get_i2c_device(address)
 
             self.gpio_bytes = int(ceil(self.NUM_GPIO / 8.0))
+            if verbose:
+                self.print('gpio_bytes =', self.gpio_bytes)
 
             old_iodir = self._device.readList(self.IODIR, self.gpio_bytes)
             if verbose:
@@ -77,13 +79,6 @@ class RPi_Switcher(object):
                 self.output(self.POWER_PINS[n],
                         GPIO.HIGH if power else GPIO.LOW)
 
-        def get_power(self, n):
-            assert(0 <= n < self.NUM_RPIS_PER_MCP)
-            pin = self.POWER_PINS[n]
-            idx = pin // 8
-            off = pin % 8
-            return bool(self.gpio[idx] & (1<<off))
-
         def enable_serial(self, stat):
             if self.verbose:
                 self.print('Enabling' if stat else 'Disabling', 'serial')
@@ -103,6 +98,16 @@ class RPi_Switcher(object):
                 self.print('select_serial: Writing', d)
             if not self.dry_run:
                 self.output_pins(d)
+
+        def get_status_of_pin(self, pin):
+            assert(pin < self.gpio_bytes * 8)
+            idx = pin // 8
+            off = pin % 8
+            return bool(self.gpio[idx] & (1<<off))
+
+        def get_power(self, n):
+            assert(0 <= n < self.NUM_RPIS_PER_MCP)
+            return self.get_status_of_pin(self.POWER_PINS[n])
 
     def __init__(self, verbose=False, dry_run=False):
         self.verbose = verbose
@@ -135,7 +140,10 @@ class RPi_Switcher(object):
         mcp.set_power(n % self.NUM_RPIS_PER_MCP, power)
 
     def get_power(self, n):
-        mcp = self.init_mcp_of_slave(n)
+        try:
+            mcp = self.init_mcp_of_slave(n)
+        except OSError:
+            return False
         return mcp.get_power(n % self.NUM_RPIS_PER_MCP)
 
     def select_serial(self, n):
