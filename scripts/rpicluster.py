@@ -227,7 +227,7 @@ def main():
                 print(sw.get_serial())
             else:
                 n = int(s, base=0)
-                print(sw.get_power(n))
+                print(int(sw.get_power(n)))
 
 
 if __name__ == '__main__':
