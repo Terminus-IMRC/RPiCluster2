@@ -40,17 +40,25 @@ trap "{ rm -f \"$tmp\"; }" EXIT
 
 control_power() {
     while :; do
+        cmd="$SCRIPT_PY"
+        for i in $slaves_avail; do
+            cmd+=" -i $i"
+        done
+        stats=($($cmd))
+
         cmd="dialog --no-tags --cancel-label 'Go up'"
         cmd+=" --extra-button --extra-label 'Refresh'"
         cmd+=" --checklist 'RPiCluster2: Power control' 0 0 0"
+        j=0
         for i in $slaves_avail; do
-            if [ "$($SCRIPT_PY -i $i)" == 0 ]; then
+            if [ "${stats[$j]}" -eq 0 ]; then
                 stat="off"
             else
                 stat="on"
             fi
             cmd+=$(printf " %d \"Slave #%-2d: %s\" %s" "$i" "$i" \
                     "${slaves_dscr[$i]}" "$stat")
+            j=$((j+1))
         done
 
         bash -c "$cmd" 2>"$tmp"
