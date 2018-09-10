@@ -159,12 +159,12 @@ main_menu() {
         cmd+=" --menu 'RPiCluster2' 0 0 0"
         cmd+=" power 'Power control'"
         cmd+=" sersel 'Serial select'"
+        cmd+=" sercon 'Open serial terminal'"
         if [ "$NFSD_STAT" -eq 0 ]; then
             cmd+=" nfsd 'Start NFS server'"
         else
             cmd+=" nfsd 'Stop NFS server'"
         fi
-        cmd+=" sercon 'Open serial terminal'"
         cmd+=" edit 'Edit slave list'"
 
         bash -c "$cmd" 2>"$tmp"
@@ -183,6 +183,10 @@ main_menu() {
                     select_serial
                     ret="$?"
                     ;;
+                sercon)
+                    picocom -b 115200 /dev/ttyAMA0
+                    ret="$?"
+                    ;;
                 nfsd)
                     if [ "$NFSD_STAT" -eq 0 ]; then
                         sudo service nfs-kernel-server start
@@ -191,10 +195,6 @@ main_menu() {
                         sudo service nfs-kernel-server stop
                         ret="$?"
                     fi
-                    ;;
-                sercon)
-                    picocom -b 115200 /dev/ttyAMA0
-                    ret="$?"
                     ;;
                 edit)
                     $EDITOR "$SLAVE_LIST"
