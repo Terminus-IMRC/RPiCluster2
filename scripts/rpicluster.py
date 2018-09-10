@@ -77,6 +77,13 @@ class RPi_Switcher(object):
                 self.output(self.POWER_PINS[n],
                         GPIO.HIGH if power else GPIO.LOW)
 
+        def get_power(self, n):
+            assert(0 <= n < self.NUM_RPIS_PER_MCP)
+            pin = self.POWER_PINS[n]
+            idx = pin // 8
+            off = pin % 8
+            return bool(self.gpio[idx] & (1<<off))
+
         def enable_serial(self, stat):
             if self.verbose:
                 self.print('Enabling' if stat else 'Disabling', 'serial')
@@ -127,6 +134,10 @@ class RPi_Switcher(object):
         mcp = self.init_mcp_of_slave(n)
         mcp.set_power(n % self.NUM_RPIS_PER_MCP, power)
 
+    def get_power(self, n):
+        mcp = self.init_mcp_of_slave(n)
+        return mcp.get_power(n % self.NUM_RPIS_PER_MCP)
+
     def select_serial(self, n):
         mcps = self.init_all_mcps()
         mcp_idx = n // self.NUM_RPIS_PER_MCP
@@ -158,16 +169,23 @@ def main():
     parser.add_option('-s', '--serial',
             action='store', type='int', dest='serial',
             help='RPi no. to connect serial to')
+    parser.add_option('-i', '--info',
+            action='append', type='str', dest='info',
+            help='RPi no. or "s" (serial) to check its status (0=off, 1=on)')
 
     (options, args) = parser.parse_args()
     if len(args) != 0:
         parser.error('Extra arguments specified')
 
-    if options.on is None and options.off is None and options.serial is None:
+    if options.on is None and \
+            options.off is None and \
+            options.serial is None and \
+            options.info is None:
         parser.print_help()
         return
 
     sw = RPi_Switcher(verbose=options.verbose, dry_run=options.dry_run)
+
     if options.off is not None:
         for n in options.off:
             sw.set_power(n, GPIO.LOW)
@@ -176,6 +194,15 @@ def main():
             sw.set_power(n, GPIO.HIGH)
     if options.serial is not None:
         sw.select_serial(options.serial)
+
+    if options.info is not None:
+        for s in options.info:
+            if s == "s":
+                pass
+            else:
+                n = int(s, base=0)
+                i = sw.get_power(n)
+                print(i)
 
 
 if __name__ == '__main__':
