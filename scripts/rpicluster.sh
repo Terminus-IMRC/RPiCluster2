@@ -3,11 +3,10 @@
 PREFIX="$(realpath $(dirname $0))"
 SCRIPT_PY="$PREFIX/rpicluster.py"
 SLAVE_LIST="$PREFIX/rpicluster.txt"
-NUM=8
 
 
 if [ -e "$SLAVE_LIST" -a ! -f "$SLAVE_LIST" ]; then
-    echo "error: Slave list $SLAVE_LIST is not a normal file" >&2
+    echo "error: Slave list $SLAVE_LIST is not a normal file.  Remove it." >&2
     exit 1
 fi
 
@@ -33,10 +32,6 @@ while read line; do
     slaves_avail+=" $n"
     slaves_dscr[$n]="$dscr"
 done <"$SLAVE_LIST"
-
-for n in $slaves_avail; do
-    printf "Slave #%-2d: %s\n" "$n" "${slaves_dscr[$n]}"
-done
 
 
 tmp="$(mktemp)"
